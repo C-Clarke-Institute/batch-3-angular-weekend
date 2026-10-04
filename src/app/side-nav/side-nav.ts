@@ -11,7 +11,7 @@ export class SideNav {
 
 
   asd(event: any) {
-    alert( "Side Nav Event" );
+    alert( JSON.stringify( event ) );
   }
 
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-product',
@@ -6,4 +6,15 @@ import { Component } from '@angular/core';
   templateUrl: './product.html',
   styleUrl: './product.scss',
 })
-export class Product {}
+export class Product {
+
+  @Input()
+  title: string = 'Title';
+
+  @Input()
+  price: number = 0;
+
+  onClick() {
+    alert( this.title );
+  }
+}

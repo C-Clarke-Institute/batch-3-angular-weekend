@@ -19,7 +19,10 @@ export class SideNavItem {
 
   abc(event: any) {
       // alert("Click Me!");
-    this.qwe.emit();
+    const data = {
+      title: this.title,
+    }
+    this.qwe.emit( data );
   }
 
   xyz(event: any) {
