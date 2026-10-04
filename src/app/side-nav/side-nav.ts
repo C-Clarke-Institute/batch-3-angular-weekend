@@ -7,4 +7,11 @@ import { SideNavItem } from '../side-nav-item/side-nav-item';
   templateUrl: './side-nav.html',
   styleUrl: './side-nav.scss',
 })
-export class SideNav {}
+export class SideNav {
+
+
+  asd(event: any) {
+    alert( "Side Nav Event" );
+  }
+
+}
