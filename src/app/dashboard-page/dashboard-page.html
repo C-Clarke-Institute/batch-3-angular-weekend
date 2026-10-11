@@ -1,4 +1,8 @@
 <p>dashboard-page works!</p>
+<p>{{ searchText }}</p>
+<p>{{ text }}</p>
+<input (input)="handleInputChange($event)" placeholder="Type Here" >
+<input [(ngModel)]="text" placeholder="Type Here" >
 <div class="app-dashboard">
 
   <app-product [title]="'Laptop'" [price]="100"></app-product>
