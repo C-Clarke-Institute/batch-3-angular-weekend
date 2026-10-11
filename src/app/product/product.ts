@@ -14,7 +14,18 @@ export class Product {
   @Input()
   price: number = 0;
 
+  @Input()
+  stock: number = 0;
+
+  @Input()
+  discount: number = 0;
+
+  constructor() {}
+
+
   onClick() {
     alert( this.title );
   }
+
+
 }

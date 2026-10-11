@@ -1,6 +1,19 @@
 
 <div class="app-product">
   <p>{{ title }}</p>
+  <p>Discount : {{discount}}%</p>
   <p>Price : ${{price}}</p>
-  <button (click)="onClick()" >Add</button>
+  <p>Stock : {{stock}}</p>
+
+  @if ( discount > 0) {
+    <p>Discount Price : ${{ price - ( price * discount / 100) }}</p>
+  }
+  @else {
+    <p>No Discount</p>
+  }
+
+  @if ( stock > 0) {
+    <button (click)="onClick()" >Add</button>
+  }
+
 </div>

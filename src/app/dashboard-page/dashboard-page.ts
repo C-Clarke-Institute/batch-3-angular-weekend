@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Product } from '../product/product';
 import { FormsModule } from '@angular/forms';
+import { IProduct } from '../models/product.model';
 
 @Component({
   selector: 'app-dashboard-page',
@@ -13,7 +14,19 @@ export class DashboardPage {
 
   text: string = 'Search Text';
 
+  products: IProduct[] = [
+    { title: 'Laptop', price: 100 , stock: 10, discount: 0} as IProduct,
+    { title: 'Mobile', price: 50, stock: 0, discount: 10} as IProduct,
+    { title: 'Watch', price: 80, stock: 5, discount: 10} as IProduct,
+  ];
+
   handleInputChange(event: any) {
     this.searchText = event.target.value;
   }
+
+
+
+
+
+
 }
