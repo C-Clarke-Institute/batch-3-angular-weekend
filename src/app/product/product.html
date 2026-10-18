@@ -1,19 +1,21 @@
 
 <div class="app-product">
-  <p>{{ title }}</p>
+  <p highlight>{{ title }}</p>
   <p>Discount : {{discount}}%</p>
-  <p>Price : ${{price}}</p>
-  <p>Stock : {{stock}}</p>
+  <p highlight [ngStyle]="{
+  'color' : stock > 0 ? 'black' : 'red',
+  'font-size.px' : fontSize
+  }">Price : ${{price}}</p>
+  <p [class.out-of-stock]="stock == 0">Stock : {{stock}}</p>
 
   @if ( discount > 0) {
-    <p>Discount Price : ${{ price - ( price * discount / 100) }}</p>
+    <p highlight >Discount Price : ${{ price - ( price * discount / 100) }}</p>
   }
   @else {
     <p>No Discount</p>
   }
 
-  @if ( stock > 0) {
-    <button (click)="onClick()" >Add</button>
-  }
+  <button [disabled]="stock==0" [ngClass]="{ 'disabled' : stock == 0 , 'product-add-button' : true }" (click)="onClick()" >Add</button>
+  <button [hidden]="stock==0" [ngClass]="{ 'product-add-button' : true }" (click)="onIncrement()" >Increment</button>
 
 </div>
