@@ -13,6 +13,10 @@ export class DashboardPage {
   searchText: string = 'Hello';
 
   text: string = 'Search Text';
+  title: string = 'Search Text';
+  price: number = 0.00;
+  stock: number = 0;
+  discount: number = 0;
 
   products: IProduct[] = [
     { title: 'Laptop', price: 100 , stock: 10, discount: 0} as IProduct,

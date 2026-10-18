@@ -3,6 +3,7 @@
 <p>{{ text }}</p>
 <input (input)="handleInputChange($event)" placeholder="Type Here" >
 <input [(ngModel)]="text" placeholder="Type Here" >
+<button>Add Product</button>
 <div class="app-dashboard">
 
   @for ( product of products; track product.id) {
