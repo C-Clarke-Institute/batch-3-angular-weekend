@@ -7,4 +7,5 @@ export interface IProduct {
   price: number;
   discount: number;
   stock: number;
+  date: Date;
 }

@@ -19,9 +19,9 @@ export class DashboardPage {
   discount: number = 0;
 
   products: IProduct[] = [
-    { title: 'Laptop', price: 100 , stock: 10, discount: 0} as IProduct,
-    { title: 'Mobile', price: 50, stock: 0, discount: 10} as IProduct,
-    { title: 'Watch', price: 80, stock: 5, discount: 10} as IProduct,
+    { title: 'Laptop', price: 100.20 , stock: 10, discount: 0, date: new Date('2026-05-23T08:56:21.618Z')} as IProduct,
+    { title: 'Mobile', price: 50.50, stock: 0, discount: 10, date: new Date('2026-06-23T08:56:21.618Z')} as IProduct,
+    { title: 'Watch', price: 80.11, stock: 5, discount: 10, date: new Date('2026-06-23T08:56:21.618Z')} as IProduct,
   ];
 
   handleInputChange(event: any) {
