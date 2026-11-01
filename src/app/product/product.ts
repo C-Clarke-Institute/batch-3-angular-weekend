@@ -1,10 +1,10 @@
 import { Component, Input } from '@angular/core';
-import { NgClass, NgStyle } from '@angular/common';
+import { CurrencyPipe, DatePipe, NgClass, NgStyle } from '@angular/common';
 import { AppHighlight } from '../app-highlight';
 
 @Component({
   selector: 'app-product',
-  imports: [NgClass, NgStyle, AppHighlight],
+  imports: [NgClass, NgStyle, AppHighlight, DatePipe, CurrencyPipe],
   templateUrl: './product.html',
   styleUrl: './product.scss',
 })
@@ -20,6 +20,9 @@ export class Product {
 
   @Input()
   discount: number = 0;
+
+  @Input()
+  date: Date = new Date();
 
   fontSize: number = 24;
 
