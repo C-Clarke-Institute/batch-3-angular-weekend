@@ -1,4 +1,4 @@
-import { Directive, ElementRef, Renderer2 } from '@angular/core';
+import { Directive, ElementRef, Input, Renderer2 } from '@angular/core';
 
 @Directive({
   selector: '[highlight]',
@@ -9,17 +9,24 @@ import { Directive, ElementRef, Renderer2 } from '@angular/core';
 })
 export class AppHighlight {
 
+  @Input('highlight') highlight: any;
+  @Input('color') color: any;
+
   constructor(private el: ElementRef, private renderer: Renderer2 ) { }
 
 
   onHighlight() {
     console.log('Highlight add');
     this.renderer.setStyle(
-      this.el.nativeElement, 'background-color', 'yellow'
+      this.el.nativeElement, 'background-color', this.highlight ? this.highlight : 'yellow'
+    );
+    this.renderer.setStyle(
+      this.el.nativeElement, 'color', this.color ? this.color : 'black'
     );
   }
   onRemoveHighlight() {
     console.log('Highlight removed');
     this.renderer.removeStyle(this.el.nativeElement, 'background-color');
+    this.renderer.removeStyle(this.el.nativeElement, 'color');
   }
 }
